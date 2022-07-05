@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
 serve((_req) => {
   const body = `{"name": "Deno"}`;
-  resp = await fetch("https://173a0n56qe.execute-api.eu-west-1.amazonaws.com/newjwt", {
+  const resp = await fetch("https://173a0n56qe.execute-api.eu-west-1.amazonaws.com/newjwt", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
