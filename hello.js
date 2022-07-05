@@ -10,6 +10,7 @@ async function handler(req) {
     },
     body,
   });
+  console.log(resp)
   
   return new Response(JSON.stringify(resp.body), {
     headers: { "content-type": "application/json" },
