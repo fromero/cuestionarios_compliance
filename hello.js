@@ -12,7 +12,7 @@ async function handler(req) {
   });
   console.log(resp)
   
-  return new Response(JSON.stringify(resp.body), {
+  return new Response(JSON.stringify(await resp.json()), {
     headers: { "content-type": "application/json" },
   });
 }
