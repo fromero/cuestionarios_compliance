@@ -1,7 +1,7 @@
-import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.147.0/http/server.ts";
 
-serve((_req) => {
-  const body = `{"name": "Deno"}`;
+async function handler(req) {
+  const body = "";
   const resp = await fetch("https://173a0n56qe.execute-api.eu-west-1.amazonaws.com/newjwt", {
     method: "POST",
     headers: {
@@ -14,4 +14,7 @@ serve((_req) => {
   return new Response(JSON.stringify(resp.body), {
     headers: { "content-type": "application/json" },
   });
-});
+}
+
+serve(handler);
+
